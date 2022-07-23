@@ -1,5 +1,9 @@
 #define ll long long
+#define ss second
+#define ff first
+#define pb push_back
 #include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 ll freq[15];
@@ -24,16 +28,16 @@ int main(){
   cin>>t;
   while(t--){
     cin>>n>>k;
-    loop(i,0,n-1) v[i].clear();
+    for(int i =0;i<=n-1;i++) v[i].clear();
     ll a[n];
     read(a,n);
-    loop(j,0,n-1){
-      loop(i,1,k){
+    for(int j=0;j<=n-1;j++){
+      for(int i=1;i<=k;i++){
         int x=(a[j]&i);
         v[j].pb({x,i});
       }      
     }
-    loop(i,0,n-1) dp[i]=-1;
+    for(int i=0;i<n;i++) dp[i]=-1;
     cout<<solve(0)<<endl;
   }
 }
